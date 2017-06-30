@@ -1,5 +1,10 @@
 import React from 'react';
 import { StyleSheet } from 'react-native';
+import { Dimensions } from 'react-native';
+const { width, height } = Dimensions.get('window');
+
+const guidelineBaseHeight = 680;
+const scaleVertical = size => height / guidelineBaseHeight * size;
 
 const contentStyle = StyleSheet.create({
   container: {
@@ -32,7 +37,13 @@ const contentStyle = StyleSheet.create({
   ModalAddCategoriesContent : {
     width: 300,
     height: 500,
-    backgroundColor: 'green'
+    backgroundColor: '#ffffff'
+  },
+  Modalbuttons: {
+    flexDirection: 'row',
+    marginBottom: scaleVertical(24),
+    marginHorizontal: 24,
+    justifyContent: 'space-around',
   }
 });
 export default contentStyle;

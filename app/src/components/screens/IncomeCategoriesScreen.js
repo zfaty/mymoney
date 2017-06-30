@@ -1,6 +1,6 @@
 import React from 'react';
 import { Modal, Text, View, TouchableHighlight, StyleSheet } from 'react-native';
-import { List, ListItem, FormLabel, FormInput } from 'react-native-elements'
+import { List, ListItem, FormLabel, FormInput, Button } from 'react-native-elements'
 import ActionButton from 'react-native-action-button';
 import contentStyle from  '../../styles/contentStyle';
 
@@ -57,10 +57,12 @@ class IncomeCategoriesScreen extends React.Component {
              <View style={contentStyle.ModalAddCategoriesContainer}>
               <View style={contentStyle.ModalAddCategoriesContent}>
                 <Text>Hello World!</Text>
-
                 <FormLabel>Name</FormLabel>
                 <FormInput/>
-                <Button title='CANCEL' />   <Button title='SAVE' />
+                <View style={contentStyle.Modalbuttons}>
+                  <Button title='CANCEL' onPress={this._changeVisibilty} />
+                  <Button title='SAVE' />
+                </View>
 
               </View>
              </View>
