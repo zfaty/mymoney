@@ -7,11 +7,11 @@
     "test": "jest"
   },
   "dependencies": {
-    "react": "~15.4.0-rc.4",
-    "react-native": "0.40.0",
-    "react-native-action-button": "^1.0.0",
+    "react": "16.0.0-alpha.12",
+    "react-native": "0.45.1",
+    "react-native-action-button": "^2.7.1",
     "react-native-elements": "^0.13.0",
-    "react-native-vector-icons": "~4.1.1",
+    "react-native-vector-icons": "^4.1.1",
     "react-navigation": "^1.0.0-beta.11",
     "realm": "^1.8.1"
   },

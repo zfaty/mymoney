@@ -1,14 +1,16 @@
 import React from 'react';
-import { Text, View, Image, StyleSheet } from 'react-native';
-import { List, ListItem } from 'react-native-elements'
+import { Modal, Text, View, TouchableHighlight, StyleSheet } from 'react-native';
+import { List, ListItem, FormLabel, FormInput } from 'react-native-elements'
+import ActionButton from 'react-native-action-button';
+import contentStyle from  '../../styles/contentStyle';
 
 const list = [
   {
-    title: 'Salery',
+    name: 'Salery',
     icon: 'av-timer'
   },
   {
-    title: 'Trips',
+    name: 'Saveing',
     icon: 'flight-takeoff'
   }
 ]
@@ -16,20 +18,58 @@ const list = [
 
 
 class IncomeCategoriesScreen extends React.Component {
+  constructor() {
+    super();
+    this.state = {modalVisible: false};
+    this._changeVisibilty = this._changeVisibilty.bind(this);
+
+  }
+  _changeVisibilty(event) {
+    let visiblity = true;
+    if(this.state.modalVisible){
+      visiblity = false;
+    }
+    this.setState({
+      modalVisible: visiblity
+    });
+  }
   render() {
     return (
-      <List>
-        {
-          list.map((item, i) => (
-            <ListItem
-              key={i}
-              title={item.title}
-              leftIcon={{name: item.icon}}
-              hideChevron
-            />
-          ))
-        }
-      </List>
+        <View style={contentStyle.CategoriesScreen}>
+          <List>
+            {
+              list.map((item, i) => (
+                <ListItem
+                  key={i}
+                  title={item.name}
+                  leftIcon={{name: item.icon}}
+                  hideChevron
+                />
+              ))
+            }
+          </List>
+            <Modal
+              animationType={"fade"}
+              transparent={true}
+              visible={this.state.modalVisible}
+              onRequestClose={this._changeVisibilty}
+              >
+             <View style={contentStyle.ModalAddCategoriesContainer}>
+              <View style={contentStyle.ModalAddCategoriesContent}>
+                <Text>Hello World!</Text>
+
+                <FormLabel>Name</FormLabel>
+                <FormInput/>
+                <Button title='CANCEL' />   <Button title='SAVE' />
+
+              </View>
+             </View>
+            </Modal>
+          <ActionButton
+            buttonColor="rgba(231,76,60,1)"
+            onPress={this._changeVisibilty}
+          />
+        </View>
     )
   }
 }
