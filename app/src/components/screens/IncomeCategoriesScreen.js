@@ -8,7 +8,7 @@ const list = [
     icon: 'av-timer'
   },
   {
-    title: 'Trips',
+    title: 'Trips v1.0',
     icon: 'flight-takeoff'
   }
 ]
