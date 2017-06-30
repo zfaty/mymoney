@@ -1,7 +1,7 @@
 import React from 'react';
 import { Text, View, Image, StyleSheet } from 'react-native';
 import { StackNavigator } from 'react-navigation';
-import { DrawerButton, PrefButton } from './HeaderButtons';
+import { NavBar, DrawerButton, PrefButton} from './HeaderButtons';
 import contentStyle from  '../../styles/contentStyle';
 import CategoriesScreen from  '../screens/CategoriesScreen';
 
@@ -13,15 +13,9 @@ const CategoriesNavigator = StackNavigator(
   },
 },
 {
-  navigationOptions : ({navigation}) => ({
-    headerTitle: 'Categories',
-    headerLeft: (
-      <DrawerButton navigation={navigation} />
-    ),
-    headerRight: (
-      <PrefButton navigation={navigation} />
-    ),
-  })
+  navigationOptions : ({navigation}) => (
+    NavBar(navigation)
+  )
 });
 
 export default CategoriesNavigator;

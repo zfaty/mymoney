@@ -27,7 +27,7 @@ const MainNavigator = DrawerNavigator({
   },
 },
 {
-  initialRouteName: 'Dashboard',
+  initialRouteName: 'Categories',
   contentOptions: {
     activeTintColor: '#548ff7',
     activeBackgroundColor: 'transparent',

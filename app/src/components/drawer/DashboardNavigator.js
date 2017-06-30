@@ -12,11 +12,9 @@ const DashboardNavigator = StackNavigator(
   },
 },
 {
-  navigationOptions : ({navigation}) => ({
-    header: (headerProps) => {
-        return <NavBar navigation={navigation} headerProps={headerProps}/>
-    }
-  })
+  navigationOptions : ({navigation}) => (
+    NavBar(navigation)
+  )
 });
 
 export default DashboardNavigator;

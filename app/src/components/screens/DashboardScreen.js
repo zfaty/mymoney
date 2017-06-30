@@ -7,7 +7,7 @@ import contentStyle from  '../../styles/contentStyle';
 class DashboardScreen extends React.Component {
   static navigationOptions = {
     drawerLabel: 'Dashboard',
-    headerTitle :'DashTEST'
+    headerTitle :'Dashboard'
   };
 
   constructor() {
