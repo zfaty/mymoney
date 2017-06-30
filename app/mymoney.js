@@ -1,29 +1,33 @@
 import React from 'react';
-import {Text, View } from 'react-native'; 
+import {Text, View } from 'react-native';
 import { StackNavigator, DrawerNavigator, DrawerItems } from 'react-navigation';
 
-import HomeNavigator from './src/components/drawer/HomeNavigator';
-import ChatNavigator from './src/components/drawer/ChatNavigator';
+import DashboardNavigator from './src/components/drawer/DashboardNavigator';
+import AccountsNavigator from './src/components/drawer/AccountsNavigator';
+import CategoriesNavigator from './src/components/drawer/CategoriesNavigator';
 
-const CustomDrawerContentComponent = props => (
+const SideMenu = props => (
   <View style={{ flex: 1}}>
     <View style={{ marginTop: 40, justifyContent: 'center', alignItems: 'center' }} >
-    <Text>CustomDrawerContentComponent</Text>
+    <Text>Profile</Text>
     </View>
     <DrawerItems {...props} />
   </View>
 );
 
 const MainNavigator = DrawerNavigator({
-  Home: {
-    screen: HomeNavigator,
+  Dashboard: {
+    screen: DashboardNavigator,
   },
-  Chat: {
-    screen: ChatNavigator,
+  Accounts: {
+    screen: AccountsNavigator,
+  },
+  Categories: {
+    screen: CategoriesNavigator,
   },
 },
 {
-  initialRouteName: 'Home',
+  initialRouteName: 'Dashboard',
   contentOptions: {
     activeTintColor: '#548ff7',
     activeBackgroundColor: 'transparent',
@@ -32,7 +36,7 @@ const MainNavigator = DrawerNavigator({
       fontSize: 15
     },
   },
-  contentComponent: CustomDrawerContentComponent,
+  contentComponent: SideMenu,
 }
 );
 

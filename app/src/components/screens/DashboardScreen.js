@@ -1,23 +1,13 @@
 import React from 'react';
-import { Text, View, Image, StyleSheet, TouchableWithoutFeedback, TextInput, Button } from 'react-native';
-import { StackNavigator } from 'react-navigation';
-import { DrawerButton, PrefButton} from './HeaderButtons';
+import { Text, View, Image, StyleSheet, TextInput, Button } from 'react-native';
 import { Icon, Avatar } from 'react-native-elements';
 import contentStyle from  '../../styles/contentStyle';
 
 
-
-class HomeScreen extends React.Component {
+class DashboardScreen extends React.Component {
   static navigationOptions = {
-    drawerLabel: 'Home',
-    drawerIcon: ({ tintColor }) => (
-    <Avatar
-      small
-      rounded
-      icon={{name: 'home',type:'entypo'}}
-      onPress={() => console.log("Works!")}
-      activeOpacity={0.7}/>
-    ),
+    drawerLabel: 'Dashboard',
+    headerTitle :'DashTEST'
   };
 
   constructor() {
@@ -30,8 +20,8 @@ class HomeScreen extends React.Component {
   render() {
     return (
     <View style={ contentStyle.container }>
-      <Text>Home Screen</Text>
-          
+      <Text>Dashboard Screen</Text>
+
           <TextInput style={{height: 50, width: 200, padding: 4, marginBottom: 0, fontSize: 16, borderWidth: 1, borderColor: '#eee', borderRadius: 8, backgroundColor: '#fff'}}
             placeholder='Add a todo'
             blurOnSubmit={false}
@@ -44,8 +34,8 @@ class HomeScreen extends React.Component {
           title={'Add Todo'}
           onPress={this._onPress} />
 
-         
-      
+
+
     </View>
     );
   }
@@ -64,24 +54,4 @@ class HomeScreen extends React.Component {
   }
 }
 
-
-const HomeNavigator = StackNavigator(
-{
-  Home: {
-    screen: HomeScreen,
-  },  
-},
-{
-  navigationOptions : ({navigation}) => ({
-    headerTitle: 'Home',
-    headerLeft: (
-      <DrawerButton navigation={navigation} />
-    ),
-    headerRight: (
-      <PrefButton navigation={navigation} />
-    ),
-  })
-});
-
-export default HomeNavigator;
-
+export default DashboardScreen;
